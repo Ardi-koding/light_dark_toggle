@@ -1,0 +1,56 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* outline: 1px solid black; */
+}
+
+body {
+  line-height: 1.4;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: grid;
+  place-content: center;
+}
+
+.container {
+  /* margin: 0 auto; */
+  padding: 5em;
+}
+
+.col {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  margin: 0;
+  display: inline-block;
+}
+
+.switch {
+  width: 75px;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.25em;
+}
+
+input {
+  visibility: hidden;
+  position: absolute;
+}
+
+.slider-round {
+  width: 25px;
+  height: 25px;
+  border: 1px solid red;
+  border-radius: 1em;
+  display: grid;
+  place-content: center;
+}
