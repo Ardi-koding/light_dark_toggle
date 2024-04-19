@@ -1,41 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Light and Dark Toggle</title>
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="main.js"></script>
-    <script
-      defer
-      src="https://kit.fontawesome.com/6ec66174ee.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <h1>Light / Dark Mode</h1>
-          <label for="toggle" class="switch">
-            <input type="checkbox" id="toggle" name="light_dark_toggle" />
-            <span class="slider-round">
-              <i class="fa-solid fa-sun"></i>
-              <i class="fa-solid fa-moon icon-hidden"></i>
-            </span>
-          </label>
-        </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Light and Dark Toggle</title>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		<script defer src="main.js"></script>
+		<script
+			defer
+			src="https://kit.fontawesome.com/6ec66174ee.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body class="roboto-regular">
+				<div class="col">
+					<h1 class="roboto-mono">Light / Dark Mode</h1>
+					<label for="toggle" class="switch">
+						<input
+							type="checkbox"
+							id="toggle"
+							name="light_dark_toggle"
+						/>
+						<span class="slider-round">
+							<i class="fa-solid fa-sun fa-2xl"></i>
+							<i class="fa-solid fa-moon fa-2xl icon-hidden"></i>
+						</span>
+					</label>
+				</div>
 
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus veniam
-          aspernatur, deleniti officiis porro, laudantium eos eligendi dolorem
-          repellendus nihil, dolores mollitia reiciendis asperiores corrupti
-          quidem dicta voluptatum debitis aperiam.
-        </p>
-      </div>
-    </div>
-    <div>
-      <h2 class="test">HHHHHHHH</h2>
-    </div>
-  </body>
+				<p>
+					Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+					Minus veniam aspernatur, deleniti officiis porro, laudantium
+					eos eligendi dolorem repellendus nihil, dolores mollitia
+					reiciendis asperiores corrupti quidem dicta voluptatum
+					debitis aperiam.
+				</p>
+		<div>
+			<h2 class="test">HHHHHHHH</h2>
+		</div>
+	</body>
 </html>
