@@ -1,52 +1,63 @@
-// const input = document.querySelector("input");
-// const label = document.querySelector("label");
-// const span = document.querySelector("span");
-// const body = document.querySelector("body");
-// const sun = document.querySelector(".fa-sun");
-// const moon = document.querySelector(".fa-moon");
-// const heading = document.querySelector("h1");
-// const paragraph = document.querySelector("p");
+/*
+    GOAL
+    1. Membuat Button Toggle yang akan mengganti tema dari 
+	Light ke Dark dan Sebaliknya [Done]
+	2. Animasi mulus saat perubahan tema [Not Yet]
 
-// let darkMode = (x) => {
-// 	span.style.transform = "translateX(41px)";
-// 	body.style.backgroundColor = "#36264c";
-// 	moon.classList.remove("icon-hidden");
-// 	sun.classList.add("icon-hidden");
-// 	heading.style.color = "#707875";
-// 	paragraph.style.color = "#707875";
-// 	label.style.borderColor = "#707875";
-// 	span.style.borderColor = "#707875";
-// };
+	Minimum Viable Product
+	1. Button dengan style yang lumayan bagus dan mampu
+		merubah tema [Done]
 
-// let lightMode = (x) => {
-// 	span.style.transform = "translateX(0px)";
-// 	body.style.backgroundColor = "#FFDF7E";
-// 	sun.classList.remove("icon-hidden");
-// 	moon.classList.add("icon-hidden");
-// 	heading.style.color = "#000";
-// 	paragraph.style.color = "#000";
-// 	span.style.backgroundColor = "#FFF";
-// };
+	Langkah-Langkah
+	1. Dua Elemen icon yaitu "sun" and "moon"; [Done]
+	2. default adalah light mode yaitu "sun" [Done]
+	3. icon yang tidak sesuai tema, kita taruh class "icon-hidden"; [Done]
+	4. Kita pakai eventlistener untuk mendengar "click" event saat button diklik. [Done]
+	5. Kita gunakan classList dan method "toggle" untuk merubah apakah sun dan moon memiliki "icon-hidden". [Done]
+	6. Sun dan Moon harus berkebalikan. [Done]
+	7. Kita deklarasikan variable yang memiliki pernyataan boolean terkait apakah sun dan moon memiliki "icon-hidden". [Done]
+	8. Berdasarkan kedua variable kita aplikasikan style yang sesuai dengan tema. [Done]
+	9. Kita harus memerhatikan event propagation. [Done]
+	10. Aplikasi Transisi yg mulus terhadap toggle button [Not Yet]
+*/
 
-// let isMoved = false;
+const body = document.querySelector("body");
+const label = document.querySelector("label");
+const span = document.querySelector(".slider-round");
 
-// function toggleButton() {
-// 	if (!isMoved) {
-// 		darkMode();
-// 	} else {
-// 		lightMode();
-// 	}
-// 	isMoved = !isMoved;
-// }
+const sun = document.querySelector(".fa-sun");
+const moon = document.querySelector(".fa-moon");
 
-// input.addEventListener("click", toggleButton);
+const themeChange = (e) => {
+	sun.classList.toggle("icon-hidden");
+	moon.classList.toggle("icon-hidden");
 
+	const isSunHidden = sun.classList.contains("icon-hidden");
+	const isMoonHidden = moon.classList.contains("icon-hidden");
 
-const h2 = document.querySelector(".test");
-const classes = h2.classList;
+	if (isSunHidden && !isMoonHidden) {
+		body.style.backgroundColor = "#36264c";
+		body.style.color = "#f6f1d5";
+		label.style.backgroundColor = "#bcd";
+		label.style.justifyContent = "flex-end";
+		span.style.backgroundColor = "#000";
+		body.style.transition = "all 1s ease 0s";
+	} else if (!isSunHidden && isMoonHidden) {
+		body.style.backgroundColor = "#bcd";
+		body.style.color = "#000";
+		label.style.backgroundColor = "#f6f1d5";
+		label.style.justifyContent = "flex-start";
+		span.style.backgroundColor = "#fff";
+		body.style.transition = "all 1s ease 0s";
+		label.style.transition = "all 0.5s";
+	}
+};
 
-h2.addEventListener('click', e => {
-  const result = classes.toggle("New");
-  h2.textContent = `${result ? "added" : ""}
-  HUMUMUMUMU`;
-})
+label.addEventListener("click", (e) => {
+	themeChange();
+});
+
+const input = document.querySelector("input");
+input.addEventListener("click", (e) => {
+	e.stopImmediatePropagation();
+});

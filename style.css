@@ -15,7 +15,7 @@ body {
 }
 
 label {
-	background-color: #f6f1d5;
+	background-color: #989898;
 }
 
 .slider-round {
@@ -78,6 +78,11 @@ h1 {
 	padding: 0.3em;
 }
 
+.switch:hover {
+	border: 2px solid rgb(61, 79, 97);
+	transition: all 0.25s;
+}
+
 input {
 	visibility: hidden;
 	position: absolute;
@@ -86,7 +91,6 @@ input {
 .slider-round {
 	width: 40px;
 	height: 40px;
-	border: 1px solid black;
 	border-radius: 2em;
 	display: grid;
 	place-content: center;
@@ -123,11 +127,16 @@ input {
 
 @media (prefers-color-scheme: dark) {
 	body {
-		background-color: #16111D;
+		background-color: #16111d;
 		color: #e1e1e1;
 	}
-	label {
+	.switch {
 		background-color: #bcd;
+		justify-content: flex-end;
+	}
+	.switch:hover {
+		border: 2px solid #000;
+		transition: all 0.25s;
 	}
 	.slider-round {
 		background-color: #fff;
